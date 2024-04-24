@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando Numeros</title>
+
+    <style>
+        h1{
+            color: rgb(202, 164, 236);
+        }
+        body{
+            background-color: black;
+            color: aliceblue;
+        }
+        input{
+            color: blueviolet;
+        }
+        div#res{
+            margin-top: 10px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        div#n{
+            margin-left: 500px;   
+            margin-top: -21px;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Somando Valores</h1>
+    <input type="number" name="txtn1" id="txtn1"> +
+    <input type="number" name="txtn2" id="txtn2">
+    <input type="button" id="bt" value="Somar">
+    
+    <div id="n">
+        🔄
+    </div>
+
+    <div id="res">
+    </div>
+
+    <script>
+
+            n.addEventListener('click' , reiniciar)
+
+            function reiniciar(){
+                var reset = " "
+                txtn1.value = reset
+                txtn2.value = reset
+                bt.value = "Somar"
+                res.innerHTML = " "
+            }
+
+            bt.addEventListener('mouseenter', entrar)
+
+            function entrar(){
+                bt.style.background = "Green"
+            }
+
+            bt.addEventListener('click', somar)
+
+        function somar(){
+            var tn1 = document.getElementById('txtn1')
+            var tn2 =  document.querySelector('input#txtn2')
+            var res = document.getElementById('res')
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var s = n1 + n2
+            res.innerHTML = `A Soma entre ${n1} + ${n2} = <strong>${s}</strong>`
+            bt.style.background = "Red"
+            bt.value = "Enviado!"
+        }
+
+        bt.addEventListener('mouseout', saiu)
+
+        function saiu(){
+            bt.style.background = "white"
+        }
+    </script>
+    
+</body>
+</html>
